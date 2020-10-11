@@ -1,0 +1,4 @@
+Para o vetor do tipo char, o computador alocou 1 bit para cada valor do vetor.
+Para o vetor do tipo int, o computador alocou 4 bits para cada valor do vetor.
+Para o vetor do tipo float, o computador alocou 4 bits para cada valor do vetor.
+Para o vetor do tipo double, o computador alocou 8 bits para cada valor do vetor.

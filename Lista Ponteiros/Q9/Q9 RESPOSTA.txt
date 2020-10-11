@@ -1,0 +1,27 @@
+Se o vetor X for do tipo char:
+
+x+0 = 4092
+x+1 = 4100
+x+2 = 4108
+x+3 = 4116
+
+Se o vetor X for do tipo int:
+
+x+0 = 4092
+x+1 = 4108
+x+2 = 4124
+x+3 = 4140
+
+Se o vetor X for do tipo float:
+
+x+0 = 4092
+x+1 = 4124
+x+2 = 4156
+x+3 = 4188
+
+Se o vetor X for do tipo char:
+
+x+0 = 4092
+x+1 = 4156
+x+2 = 4220
+x+3 = 4284 

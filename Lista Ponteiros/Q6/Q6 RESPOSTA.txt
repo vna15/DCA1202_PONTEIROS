@@ -1,0 +1,5 @@
+As expressões que referenciam o terceiro elemento do vetor são:
+
+*(pulo + 2)
+pulo + 2
+

@@ -1,0 +1,23 @@
+O programa abaixo imprime os valores que o vetor guarda, pois ao incrementar i no ponteiro (que aponta para o vetor) se avança no vetor mostrando o valor do próximo valor guardado.
+
+int main(){
+  int vet[] = {4,9,13};
+  int i;
+  for(i=0;i<3;i++){
+  printf("%d ",*(vet+i));
+  }
+}
+
+
+O programa abaixo imprime os endereços de memória das variáveis do vetor.
+
+int main(){
+  int vet[] = {4,9,13};
+  int i;
+  for(i=0;i<3;i++){
+  printf("%X ",vet+i);
+  }
+}
+
+
+

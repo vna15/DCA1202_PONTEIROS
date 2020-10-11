@@ -1,0 +1,4 @@
+p = mat + 1; // Expressão é válida
+p = mat++; // Expressão não é válida, pois não se pode incrementar um valor no vetor
+p = ++mat; // Expressão não é válida, pois não se pode incrementar um valor no vetor
+x = (*mat)++; // Expressão é válida
