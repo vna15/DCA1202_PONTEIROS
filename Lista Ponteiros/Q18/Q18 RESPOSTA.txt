@@ -1,0 +1,91 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+void multMatriz(int **ptrC, int **ptrA, int **ptrB, int LinhasA, int  ColunasA, int ColunasB){
+    int i,j,k;
+    int aux;
+
+    for(i=0; i < LinhasA; i++){
+        for(j=0; j < ColunasB;j++){
+            aux = 0;
+            for(k=0; k < ColunasA; k++){
+                aux = aux+ ptrA[i][k]*ptrB[k][j];
+            }
+            ptrC[i][j] = aux;
+
+        }
+    }
+}
+
+void Matriz (int **ptrC, int nl, int nc){
+    int i,j;
+    for(i=0;i<nl; i++){
+        for(j=0;j<nc;j++){
+            printf("%d  ", ptrC[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    void (*PTR)(int*, int*,int*, int, int, int);
+    PTR = &multMatriz;
+    int i,j,k,LinhasA, ColA,ColB;
+    int **ptrA, **ptrB, **ptrC;
+
+    printf("Informe o numero de linhas da Matriz A: ");
+    scanf("%d", &LinhasA);
+    printf("Informe o numero de colunas da Matriz A: ");
+    scanf("%d", & ColA);
+    printf("Informe o numero de colunas da Matriz B: ");
+    scanf("%d", &ColB);
+
+    ptrA = (int**)malloc(LinhasA*sizeof(int*));
+
+    for(i=0; i<LinhasA; i++){
+        ptrA[i]=(int*)malloc( ColA*sizeof(int));
+    }
+
+    ptrB = (int**)malloc( ColA*sizeof(int*));
+    for(i=0; i<LinhasA; i++){
+        ptrB[i]=(int*)malloc(ColB*sizeof(int));
+    }
+
+    ptrC = (int**)malloc(LinhasA*sizeof(int*));
+    for(i=0; i<LinhasA; i++){
+        ptrC[i]=(int*)malloc(ColB*sizeof(int));
+    }
+
+    for(i=0;i<LinhasA;i++){
+        for(j=0;j< ColA;j++){
+            ptrA[i][j] = rand()%10;
+        }
+    }
+
+    for(i=0;i< ColA;i++){
+        for(j=0;j<ColB;j++){
+            ptrB[i][j] = rand()%10;
+        }
+    }
+
+    (*PTR)(ptrC, ptrA, ptrB, LinhasA,  ColA, ColB);
+
+    Matriz(ptrA, LinhasA, ColA);
+    printf("\n");
+    Matriz(ptrB,  ColA,ColB);
+    printf("\n");
+    Matriz(ptrC, LinhasA,ColB);
+
+    for(i=0; i<LinhasA; i++){
+      free(ptrA[i]);
+      free(ptrB[i]);
+      free(ptrC[i]);
+    }
+
+    free(ptrA);
+    free(ptrB);
+    free(ptrC);
+
+    return 0;
+}
